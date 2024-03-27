@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
-export const ContactsPage = () => {
+export const ContactsPage = ({ contacts, addContacts }) => {
   /*
   Define state variables for 
   contact info and duplicate check
@@ -26,10 +26,12 @@ export const ContactsPage = () => {
     <div>
       <section>
         <h2>Add Contact</h2> 
+        <ContactForm/>
       </section>
       <hr />
       <section>
         <h2>Contacts</h2>
+        <TileList/>
       </section>
     </div>
   );

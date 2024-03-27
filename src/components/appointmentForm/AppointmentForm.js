@@ -21,6 +21,8 @@ export const AppointmentForm = ({
 }) => {
 
   return (
-    <></>
+    <form onSubmit={handleSubmit}>
+
+    </form>
   );
 };
