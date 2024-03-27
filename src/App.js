@@ -8,21 +8,41 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 function App() {
   const [contacts, setContacts] =useState([]);
   const [appointments, setAppoinments] = useState([]);
-  /*
-  Define state variables for 
-  contacts and appointments 
-  */
+  
 
   /*
   Implement functions to add data to
   contacts and appointments
   */
 
+  const addAppointments = (title, contact, date, time) => {
+    setAppoinments([
+      ...appointments,
+      {
+        title: title,
+        contact: contact,
+        date: date,
+        time: time
+      }
+    ])
+  }
+
+  const addContacts = (name, phone, email) => {
+    setContacts([
+      ...contacts,
+      {
+        name: name,
+        phone: phone,
+        email: email
+      }
+    ])
+  }
+
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
       <Route index element={ <Navigate to={ROUTES.CONTACTS} replace/> }/>
-      <Route path={ROUTES.CONTACTS} element={ <ContactsPage /> /* Add props to ContactsPage */ }/>
-      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage /> /* Add props to AppointmentsPage */ }/>
+      <Route path={ROUTES.CONTACTS} element={ <ContactsPage contacts={contacts} addContacts={addContacts} /> /* Add props to ContactsPage */ }/>
+      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage appointments={appointments} contacts={contacts} addAppointments={addAppointments} /> /* Add props to AppointmentsPage */ }/>
     </Route>
   ));
   
