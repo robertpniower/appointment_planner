@@ -22,7 +22,7 @@ export const AppointmentForm = ({
       .split("/");
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
   };
-  
+
   const getContactNames = () => {
     return contacts.map((contact) => contact.name)
   }

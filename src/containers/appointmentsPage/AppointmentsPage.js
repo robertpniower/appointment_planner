@@ -18,8 +18,6 @@ export const AppointmentsPage = ({ appointments, contacts, addAppointments }) =>
     setTime('');
   };
 
-
-
   return (
     <div>
       <section>

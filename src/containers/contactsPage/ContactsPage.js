@@ -8,7 +8,7 @@ export const ContactsPage = ({ contacts, addContacts }) => {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [duplicate, setDuplicate] = useState(false);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!duplicate) {
@@ -18,7 +18,6 @@ export const ContactsPage = ({ contacts, addContacts }) => {
       setEmail('');
       setDuplicate(false);
     }
-
   };
 
   useEffect(() => {
@@ -40,14 +39,14 @@ export const ContactsPage = ({ contacts, addContacts }) => {
     <div>
       <section>
         <h2>Add Contact</h2>
-        <ContactForm 
-        name={name}
-        setName={setName}
-        phone={phone}
-        setPhone={setPhone}
-        email={email}
-        setEmail={setEmail}
-        handleSubmit={handleSubmit}
+        <ContactForm
+          name={name}
+          setName={setName}
+          phone={phone}
+          setPhone={setPhone}
+          email={email}
+          setEmail={setEmail}
+          handleSubmit={handleSubmit}
         />
       </section>
       <hr />
