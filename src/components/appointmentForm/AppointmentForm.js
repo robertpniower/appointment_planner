@@ -22,7 +22,11 @@ export const AppointmentForm = ({
 
   return (
     <form onSubmit={handleSubmit}>
-    <label></label>
+    <label>
+      <input
+      
+      />
+    </label>
 
     </form>
   );
